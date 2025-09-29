@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cart - Demo E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">My Demo Store</a></h1>
+    <nav>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart 🛒 <span id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Your Cart</h2>
+    <div id="cart-contents"></div>
+    <div id="cart-summary" class="card hidden">
+      <p><strong>Subtotal:</strong> $<span id="cart-subtotal">0.00</span></p>
+      <a class="btn" id="go-checkout" href="checkout.html">Proceed to Checkout</a>
+    </div>
+    <div id="empty-msg" class="card">
+      <p>Your cart is empty. <a href="products.html">Browse products</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 My Demo Store</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
