@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout - Demo E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">My Demo Store</a></h1>
+    <nav>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart 🛒 <span id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Checkout</h2>
+
+    <div id="checkout-card" class="card">
+      <form id="checkout-form" novalidate>
+        <label>
+          Full name
+          <input type="text" name="fullname" id="fullname" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" id="email" required>
+        </label>
+
+        <label>
+          Shipping address
+          <input type="text" name="address" id="address" required>
+        </label>
+
+        <p><strong>Order summary</strong></p>
+        <div id="checkout-summary"></div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Place Order</button>
+          <a href="cart.html" class="btn ghost">Back to Cart</a>
+        </div>
+      </form>
+    </div>
+
+    <div id="no-cart" class="card hidden">
+      <p>Your cart is empty. <a href="products.html">Shop now</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 My Demo Store</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
