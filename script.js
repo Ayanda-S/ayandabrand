@@ -24,7 +24,7 @@ function loadProducts() {
     div.innerHTML = `
       <h3>${p.name}</h3>
       <p>${p.desc}</p>
-      <p><strong>$${p.price.toFixed(2)}</strong></p>
+      <p><strong>R${p.price.toFixed(2)}</strong></p>
       <div class="actions">
         <button class="btn" data-id="${p.id}">Add to Cart</button>
       </div>`;
@@ -67,7 +67,7 @@ function loadCartPage() {
     const row = document.createElement('div');
     row.className = 'row';
     row.innerHTML = `
-      <div><strong>${item.name}</strong><br><small>$${item.price.toFixed(2)}</small></div>
+      <div><strong>${item.name}</strong><br><small>R${item.price.toFixed(2)}</small></div>
       <div><button data-idx="${idx}" class="btn ghost">Remove</button></div>`;
     container.appendChild(row);
   });
@@ -100,10 +100,10 @@ function loadCheckoutPage() {
   }
 
   let html = '<ul>';
-  cart.forEach(it => html += `<li>${it.name} — $${it.price.toFixed(2)}</li>`);
+  cart.forEach(it => html += `<li>${it.name} — R${it.price.toFixed(2)}</li>`);
   html += '</ul>';
   const total = cart.reduce((s, it) => s + it.price, 0);
-  html += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+  html += `<p><strong>Total: R${total.toFixed(2)}</strong></p>`;
   summaryEl.innerHTML = html;
 
   document.getElementById('checkout-form').addEventListener('submit', e => {
