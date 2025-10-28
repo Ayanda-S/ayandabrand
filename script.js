@@ -43,7 +43,7 @@ function addToCart(id) {
   const cart = getCart();
   cart.push(product);
   setCart(cart);
-  alert(product.name + " added to cart");
+  //alert(product.name + " added to cart");
 }
 
 function loadCartPage() {
