@@ -27,9 +27,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </header>
 
   <main>
+    <script>
+        //const params = new URLSearchParams(window.location.search);
+        //const key = params.get('key');
+        let customerDetails = {
+          "customerEmail" : "ayanda@brand.com",
+          "customerId": "customer1"
+        };
+        window.dataLayer.push(customerDetails);
+        
+    </script>
     <section class="hero">
       <h2>Welcome to the Demo Store</h2>
-      <p>Try adding items to the cart and go through a fake checkout — no payments required.</p>
+      <p>Add items to the cart and go through checkout!</p>
       <a class="btn" href="products.html">Browse Products</a>
     </section>
   </main>
