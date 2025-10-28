@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-ML4MVCHP');</script>
-<!-- End Google Tag Manager -->
+  <script>
+    // Note: The commented-out code is preserved, as requested.
+    //const params = new URLSearchParams(window.location.search);
+    //const key = params.get('key');
+    const customerDetails = {
+      customerEmail : "ayanda@brand.com",
+      customerId: "customer1"
+    };
+    // Initialize dataLayer if it doesn't exist (good practice)
+    window.dataLayer = window.dataLayer || [];
+    // Push data *before* GTM script loads
+    window.dataLayer.push(customerDetails);
+  </script>
+
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-ML4MVCHP');</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Demo E-Commerce</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        //const params = new URLSearchParams(window.location.search);
-        //const key = params.get('key');
-        const customerDetails = {
-          customerEmail : "ayanda@brand.com",
-          customerId: "customer1"
-        };
-        window.dataLayer.push(customerDetails);
-        
-    </script>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ML4MVCHP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ML4MVCHP"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header>
     <h1><a href="index.html">My Demo Store</a></h1>
     <nav>
