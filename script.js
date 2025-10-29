@@ -133,9 +133,20 @@ function loadCheckoutPage() {
             return acc;
         }, []);
 
-
+        const transactionData = {
+            'event': 'transaction', 
+            'transactionId': orderId,
+            'transactionTotal': total.toFixed(2),
+            'currencyCode': 'ZAR',
+            'orderDiscount': 0.00,
+            'customerEmail': 'iuasbgifjlpdblbshpi', // HASH THIS VALUE IN PRODUCTION!
+            'customerId': 'customer1',
+            'customerStatus' : 'NEW',
+            'transactionProducts': consolidatedItems 
+        }
+      
         // --- PUSH TRANSACTION DATA LAYER (FIRES GTM CONVERSION TAG) ---
-        window.dataLayer = window.dataLayer || [];
+        /*window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             'event': 'transaction', 
             'transactionId': orderId,
@@ -146,12 +157,13 @@ function loadCheckoutPage() {
             'customerId': 'customer1',
             'customerStatus' : 'NEW',
             'transactionProducts': consolidatedItems 
-        });
-        
+        });*/
+
+        sessionStorage.setItem('orderData', JSON.stringify(transactionData));
         // --- FINAL ACTIONS (Must happen AFTER the dataLayer push) ---
         localStorage.removeItem('cart');
         updateCartCount();
-        location.href = `thankyou.html?name=${encodeURIComponent(name)}`;
+        location.href = `thankyou.html?name=${encodeURIComponent(name)}&orderId=${orderId}`;
     });
 }
 
@@ -162,6 +174,21 @@ function loadThankYouPage() {
   p.textContent = name
     ? `Thanks, ${decodeURIComponent(name)}! Your order has been placed.`
     : 'Thanks! Your order has been placed.';
+}
+
+function loadConversionData() {
+    const orderData = sessionStorage.getItem('orderData');
+    if (orderData) {
+        window.dataLayer = window.dataLayer || [];
+        
+        // Push the stored order data object directly
+        window.dataLayer.push(JSON.parse(orderData));
+        
+        console.log("Conversion Data Layer Pushed on Thank You Page.");
+        
+        // Clear storage immediately after use
+        sessionStorage.removeItem('orderData');
+    }
 }
 
 // **FIXED INITIALIZATION BLOCK: Prevents errors by isolating page logic**
@@ -183,5 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (document.getElementById('thanks-msg')) {
     loadThankYouPage();
+    loadConversionData();
   }
 });
