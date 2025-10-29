@@ -145,7 +145,7 @@ function loadCheckoutPage() {
                 'orderDiscount': 0,
                 // Customer Details (Use the keys GTM is looking for)
                 // NOTE: HASHING IS CRITICAL. You must implement SHA1 hashing of the email
-                'customerEmailSha1': '15as241f578de7501Gd9052H1', 
+                //'customerEmailSha1': '15as241f578de7501Gd9052H1', 
                 'customerId': 'customer1', // Get this from your logged-in user session
                 'customerStatus' : 'NEW'
                 // Item Level Details (The consolidated array)
