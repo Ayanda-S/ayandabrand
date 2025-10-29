@@ -141,15 +141,13 @@ function loadCheckoutPage() {
                 // Order Level Details
                 'transactionId': orderId,
                 'transactionTotal': total.toFixed(2),
-                'transactionAffiliation': 'My Demo Store',
-                'transactionCoupon': '', // Add logic to grab a coupon code if you have one
                 'currencyCode': 'ZAR', // Use your local currency or USD if required
-
+                'orderDiscount': 0,
                 // Customer Details (Use the keys GTM is looking for)
                 // NOTE: HASHING IS CRITICAL. You must implement SHA1 hashing of the email
                 'customerEmailSha1': '15as241f578de7501Gd9052H1', 
                 'customerId': 'customer1', // Get this from your logged-in user session
-                
+                'customerStatus' : 'NEW'
                 // Item Level Details (The consolidated array)
                 'transactionProducts': consolidatedItems 
             });
