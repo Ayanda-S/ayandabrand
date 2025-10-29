@@ -142,7 +142,7 @@ function loadCheckoutPage() {
             'transactionTotal': total.toFixed(2),
             'currencyCode': 'ZAR',
             'orderDiscount': 0.00,
-            'customerEmail': email, // HASH THIS VALUE IN PRODUCTION!
+            'customerEmail': 'iuasbgifjlpdblbshpi', // HASH THIS VALUE IN PRODUCTION!
             'customerId': 'customer1',
             'customerStatus' : 'NEW',
             'transactionProducts': consolidatedItems 
